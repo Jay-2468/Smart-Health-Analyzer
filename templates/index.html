@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🩺 Smart Health Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <button id="theme-toggle" title="Toggle dark/light mode">☀️</button>
+            <h1>🩺 Smart Health Analyzer</h1>
+            <p class="disclaimer">
+                <strong>Disclaimer:</strong> This tool is for informational purposes only and is not a substitute for
+                professional medical advice.
+            </p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <label for="symptoms">Describe your health issues in plain text:</label>
+                <textarea id="symptoms" rows="6"
+                    placeholder="e.g., I have had a persistent dry cough and a slight fever for the last 3 days."></textarea>
+                <button id="analyze-btn">Analyze My Symptoms</button>
+            </div>
+
+            <div id="results-section" class="hidden">
+                <div id="loader" class="hidden"></div>
+                <h2>Analysis Results</h2>
+                <div id="results-content"></div>
+                <button id="export-pdf-btn" class="hidden">Export to PDF</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
